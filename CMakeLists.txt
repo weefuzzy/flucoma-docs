@@ -54,11 +54,7 @@ get_filename_component(
 )
 endif()
 
-FetchContent_GetProperties(flucoma-core)
-if(NOT flucoma-core_POPULATED)
-FetchContent_Populate(flucoma-core)
-add_subdirectory(${flucoma-core_SOURCE_DIR} ${flucoma-core_BINARY_DIR})
-endif()
+FetchContent_MakeAvailable(flucoma-core)
 
 if (NOT (EXISTS "${CMAKE_BINARY_DIR}/json/"))
 	file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/json/")
